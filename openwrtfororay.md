@@ -64,6 +64,7 @@ echo */1 * * * * /etc/hotplug.d/iface/OpenWrtForOray start >> /etc/crontabs/root
 
 1. 按前述步骤制作多份脚本，命名为不同的名字，并添加到循环执行中去
 2. 修改脚本，主要修改涉及 `DOMAIN` 值的地方，比如修改为  `DOMAIN1` `DOMAIN2` ... `DOMAINN` ，对应产生 `URL1` `URL2` ... `URLN`，然后后面 `wget`语句处改为多个：
+
 ```bash
 wget -q -O /tmp/oray -q ${URL1}
 wget -q -O /tmp/oray -q ${URL2}
