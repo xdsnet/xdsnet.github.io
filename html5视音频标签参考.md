@@ -95,7 +95,7 @@
 #### *`addTextTrack()`* （所有浏览器都不支持）
 用来向音视频添加文本轨道
 
- * 语法: `audio|video.addTextTrack(kind,label,language)
+ * 语法: `audio|video.addTextTrack(kind,label,language)`
  * 参数介绍：
  
 	- `kind`:规定文本轨道的类型，可能值：
