@@ -10,19 +10,19 @@
 ## 音频标签
 
 ### 基本形式示例
-> 
+```html
     <audio src=”resURI.mp3” controls=“controls”>
 		你的浏览器不支持audio标签
 	</audio>
-
+```
 或者
->
+```html
 	<audio controls=”controls” autoplay=”autoplay” loop=”loop” preload=”preload”>
 		<source src=”resURI-1.ogg” type=”audio/ogg”>
 		<source src=”resURI-2.mp3” type=”audio/mpeg”>
 		你的浏览器不支持audio标签
 	</audio>
-
+```
 ### 主要标签属性定义及子标签介绍
 
  * `autoplay="false|true"`:定义了则页面就绪后自动加载播放
@@ -44,20 +44,20 @@
 ## 视频标签
 
 ### 基本形式示例
-> 
+```html
 	<video src="resURI.mp4" width="320" height="240" controls="controls">
 		浏览器不支持video标签
 	</video>
-	
+```	
 或者
-> 
+```html 
 	<video width="320" height="240" controls=”controls” >
 		<source src=”resURI-1.ogg” type=”video/ogg”>
 		<source src=”resURI-2.mp4” type=”video/mp4”>
 		<track src="textTrack.vtt" kind="captions" srclang="en" label="Closed Captions" default="">
 		你的浏览器不支持audio标签
 	</video>
-
+```
 
 ### 主要属性标签属性和子标签介绍
 
@@ -111,10 +111,10 @@
 
  * 返回值：一个`TextTrack`对象，表示新的文本轨道。
  * 调用示例： 
-> 
+```js 
 	text1=myVid.addTextTrack("caption");
 	text1.addCue(new TextTrackCue("Test text", 01.000, 04.000,"","","",true));
-
+```
 #### `canPlayType() ` （所有主流浏览器均支持）
 用来检测浏览器对音视频格式支持情况
 
@@ -149,26 +149,26 @@
 	 * "" - （空字符串）不支持
 
  * 调用示例： 
-> 
+```js 
 	myVid=document.createElement('video');
 	isSupp=myVid.canPlayType(vidType+';codecs="'+codType+'"');
-
+```
 #### *`load()`* （除Safari外所有主流浏览器均支持）
 更改资源后重新进行加载，没有返回值。**注意：**仅仅是加载，并不会自动播放。
 
 	* 语法: `audio|video.load()
 	* 调用示例： 
-> 
+```js 
 	document.getElementById("mp4_src").src="movie.mp4";
 	document.getElementById("ogg_src").src="movie.ogg";
 	document.getElementById("video1").load();
-
+```
 #### `play()`和 `pause()` （所有主流浏览器均支持）
 开始/暂停播放当前音视频，没有返回值。
 - 语法：`audio|video.play()`和`audio|video.pause()`
 - 调用示例：
 
->     
+```js    
 	var myVideo=document.getElementById("video1");
 	function playVid(){
   		myVideo.play();
@@ -176,7 +176,7 @@
 	function pauseVid() {
   		myVideo.pause();
 	}
-
+```
 **注意**并没有所谓的*`stop()`*方法，即没有停止方法，其效果可由`load()`代替。
 
 ### 属性 
@@ -189,10 +189,10 @@
 - 值介绍：数值值，表征当前视频宽和高，如果视频未加载则都为0。
 - 调用示例：
 
-> 
+```js
 	myVid=document.getElementById("video1");
 	alert("视频"+myVid.videoWidth+",宽"+myVid.videoHeight+"高");
-
+```
 #### *`audioTracks`* (浏览器IE支持)
 只读值，返回表示可用音轨的`AudioTrackList`类型对象
 
@@ -212,20 +212,20 @@
 
 - 调用示例：
 
-> 
+```js
 	myVid=document.getElementById("video1");
 	alert(myVid.audioTracks.length);
-
+```
 #### `autoplay` (所有浏览器支持)
 用于设置或者获取视音频对象是否加载后即开始播放的属性。
 - 语法：设置时`audio|video.autoplay=true|false`、获取时`audio|video.autoplay`
 - 值介绍：为`bool`类型值，可能值为`true`-表示加载后即开始播放，或`false`-表示不自动播放（默认）
 - 调用示例
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.autoplay=true;
 	myVid.load();
-
+```
 #### `buffered` (所有浏览器支持)
 只读值，用于获得视音频加载缓冲情况。
 - 语法：`audio|video.buffered`
@@ -236,14 +236,14 @@
 	
 	**注释：**`index`是缓冲范围下标，从0开始计数到`lenght-1`
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	lenght=myVid.buffered.lenght;
 	out="视频有"+lenght+"段缓冲区,各段起始时间(秒)为:\n";
 	for(var i=0;i<lenght;i++)
 	out=out+"第"+(i+1)+"段Start: "+myVid.buffered.start(i)+" End: "+myVid.buffered.end(0)+"\n";
 	alert(out);
-
+```
 #### *`controller`* (所有主流浏览器都不支持)
 只读值，检测一个视频是否有对应的媒体控制器
  - 语法：`audio|video.controller`
@@ -261,10 +261,10 @@
 	 - `volume` - 获得或设置音视频的音量
 	 - `muted` - 获得或设置音视频是否已静音
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	alert("Controller: " + myVid.controller);
-
+```
 #### `controls` (所有浏览器支持)
 为音视频设置/获取对应的控件（用于控制播放，每种浏览器的样式不同）状态
  
@@ -281,10 +281,10 @@
 	- 字幕（当可用时）
 	- 轨道（当可用时）
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.controls=true;
-
+```
 #### *`crossOrigin`* (除IE和Safari外所有浏览器支持)
 设置/返回 音视频对象的`CORS`（跨站共享）设置
 
@@ -316,19 +316,19 @@
 			- 如果返回为`success`(成功)，则继续获取（即允许跨站访问）
 
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.crossOrigin=`anonymous`;
-
+```
 #### `currentSrc` (所有浏览器支持)
 只读，取得当前实际播放资源URL，如果未设置则返回空字符串
 - 语法：`audio|video.currentSrc`
 - 返回值：为表示当前实际播放资源的URL，为空表示没播放
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	alert("Controller:"+myVid.currentSrc);
-
+```
 #### `currentTime` (所有浏览器支持)
 设置/取得当前播放资源时间位置数值（以秒计），
 - 语法：
@@ -336,11 +336,11 @@
 	- 获取：`audio|video.currentTime`
 - 值介绍：为表示当前实际播放的位置数值（以秒计）
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	cuT=myVid.currentTime;
 	myVid.currentTime=cut+10;//向后跳10秒
-
+```
 #### *`defaultMuted`* (只有浏览器Chrome、Firefox、Oprae支持)
 设置/获取音视频是否默认静音。**注意**，这个属性仅仅改变默认静音状态，而不是当前状态，要改变当前是否静音，需要使用`muted`属性。
 - 语法:
@@ -348,11 +348,11 @@
 	- 获取：`audio|video.defaultMuted`
 - 值介绍：布尔值，为`true`表示音视频默认静音，为`false`（默认值）表示默认不静音
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	cuT=myVid.defaultMuted;
 	myVid.defaultMuted=!cuT;//反置defaultMuted属性
-
+```
 #### *`defaultPlaybackRate`* (只有浏览器Chrome、Firefox、Oprae支持)
 设置/获取音视频默认播放速度。**注意**，这个属性仅仅改变默认播放速度，而不是当前的播放速度，要改变当前是播放速度，需要使用`playbackRate`属性。
 - 语法:
@@ -360,31 +360,31 @@
 	- 获取：`audio|video.defaultPlaybackRate `
 - 值介绍：数值，为一般为`-2.0-2.0`，默认为`1`（表示正常速度），为负值则为后退播放。
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	playbackspeed=myVid.defaultPlaybackRate ;
 	myVid.defaultPlaybackRate =(playbackspeed>1)?1:playbackspeed;//如果速度比1大（是快速）就恢复为1（标准速度）
-
+```
 #### `duration` (所有浏览器支持)
 获取音视频长度值（以秒为单位）。**注意**因为媒体资源长度可能是根据数据包计算，也可能是写入`metadata`中，所以在加载中，对于写入`metadata`的，加载后就不会变化，对根据获取数据包计算的，可能这个值会不断发生改变（特别是对于较大的音频资源）
 - 语法:`audio|video.duration `
 - 值介绍：只读数值，如果获取为`NaN`表示还未设置音视频（没有初始化加载）。
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myDur=myVid.duration ;
 	alert（"当前媒体长度为"+myDur+"秒"）;
-
+```
 #### `ended` (所有浏览器支持)
 获取音视频播放是否结束状态
 - 语法:`audio|video.ended`
 - 值介绍：只读布尔值，如果获取为`true`表示还播放已结束，`fasle`表示还未结束。
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	if(myVid.ended)
 		alert（"当前媒体播放已结束"）;
-
+```
 #### `error` (所有浏览器支持)
 获取音视频播放是否结束状态
 - 语法:`audio|video.error`一般用`audio|video.error.code`
@@ -395,10 +395,10 @@
 	- 4 = MEDIA_ERR_SRC_NOT_SUPPORTED - 不支持音频/视频
 
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	alert(myVid.error.code);
-
+```
 #### `loop` (所有浏览器支持)
 设置/获取音视频播放是否结束后循环播放
 - 语法:
@@ -406,11 +406,11 @@
 	- 设置:`audio|video.loop=true`
 - 值介绍：布尔值，为`true`表示要循环播放，`fasle`（默认值）表示不循环播放。
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	if(myVid.loop)
 		alert（"当前媒体播放会循环播放"）;
-
+```
 #### *`mediaGroup`* (所有浏览器都不支持)
 设置/获取多个音视频播放是组成一个组（从而同步播放）
 - 语法:
@@ -418,13 +418,13 @@
 	- 设置:`audio|video.mediaGroup="test"`
 - 值介绍：字符串值,在一个页面中所有同组（`mediaGroup`值相同的）媒体会同步播放。
 - 调用示例：
-> 
+```js
 	myVid1=document.getElementById("video1");
 	myVid2=document.getElementById("video2");
 	myVid1.mediaGroup="test";
 	myVid2.mediaGroup="test";
 	//至此，两个媒体就会同步播放啦
-
+```
 #### `muted` (所有浏览器支持)
 设置/获取当前音视频是否静音。
 - 语法:
@@ -432,11 +432,11 @@
 	- 获取：`audio|video.muted`
 - 值介绍：布尔值，为`true`表示音视频静音，为`false`（默认值）表示不静音
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	cuT=myVid.muted;
 	myVid.muted=!cuT;//反置muted属性——即静音开关
-
+```
 #### `networkState` (所有浏览器支持)
 获取音视频播放是否结束状态
 - 语法:`audio|video.networkState`一般用`audio|video.error.code`
@@ -448,10 +448,10 @@
 
 
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	alert(myVid.networkState);
-
+```
 #### `paused` (所有浏览器支持)
 设置/获取当前音视频是暂停。
 - 语法:
@@ -459,11 +459,11 @@
 	- 获取：`audio|video.paused`
 - 值介绍：布尔值，为`true`表示音视频暂停播放，为`false`表示没有暂停
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	cuT=myVid.paused;
 	myVid.paused=!cuT;//反置paused属性——即暂停开关
-
+```
 #### `playbackRate` (所有浏览器支持)
 设置/获取当前音视频默认播放速度。
 - 语法:
@@ -471,11 +471,11 @@
 	- 获取：`audio|video.playbackRate `
 - 值介绍：数值，为一般为`-2.0-2.0`，默认为`1`（表示正常速度），为负值则为后退播放。
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	playbackspeed=myVid.playbackRate ;
 	myVid.playbackRate =(playbackspeed>1)?1:playbackspeed;//如果速度比1大（是快速）就恢复为1（标准速度）
-
+```
 #### `played` (所有浏览器支持)
 获取当前音视频默认播放速度。
 - 语法:`audio|video.played`常用`audio|video.played.start(0)`和 `audio|video.played.end(0)`	
@@ -486,10 +486,10 @@
     
  **注释：**首段已播放范围的下标是0。
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	alert("已经播放: " + myVid.played.start(0) + " 到: " + myVid.played.end(0));
-
+```
 #### `preload` (所有浏览器支持)
 设置/获取音视频是否在页面加载后自动进行加载。
 - 语法:
@@ -497,11 +497,11 @@
 	- 获取：`audio|video.preload`
 - 值介绍：字符串值，为`auto`表示音视频自动加载，为`metadata`表示仅加载元数据，为`none`表示不自动加载
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	alert(myVid.preload);//显示当前视音频预加载设置
 	myVid.preload="auto";//将当前视音频设置为自动加载——后面进行切换源属性后也会自动加载
-
+```
 #### `readyState` (所有浏览器支持)
 只读获取音视频就绪状态。
 - 语法:`audio|video.readyState`
@@ -513,12 +513,12 @@
     - 4 = HAVE_ENOUGH_DATA - 可用数据足以开始播放
 
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	if(myVid.readyState=4){//如果就绪
 		myVid.play();//开始播放
 	}
-	
+```	
 #### `seekable` (所有浏览器支持)
 只读获取音视频可寻址范围
 - 语法:`audio|video.seekable`
@@ -529,29 +529,29 @@
 
 	**注释：**第一个可寻址范围的下标是 index 0。
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	alert("开始: " + myVid.seekable.start(0) + " 结束: " + myVid.seekable.end(0));
-
+```
 #### `seeking` (所有浏览器支持)
 只读获取音视频是否真正寻址定位
 - 语法:`audio|video.seeking`
 - 值介绍：返回布尔值，`true`表示正在寻址，`false`表示没有寻址。
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	document.getElementById("span1").innerHTML=("定位中: " + myVid.seeking);
-
+```
 #### `src` (所有浏览器支持)
 设置（一般不用做获取）音视频资源URL，要获取请用`currentSrc`属性
 - 语法:
 	- 设置：`audio|video.src=URL`
 - 值介绍：URL字符串，指示资源URL，可以采用相对或者绝对路径。
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.src="movie.ogg";
-
+```
 #### *`textTracks`*(除Safari（windows下的）外所有浏览器支持)
 只读获取音视频中可用的文本轨道
 - 语法:`audio|video.textTracks`
@@ -568,10 +568,10 @@
     	- removeCue(cue) - 从 cues 列表删除一个 cue
 
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	alert(myVid.textTracks.length+"条文本轨道");
-
+```
 #### *`videoTracks`* (所有浏览器都不支持)
 只读获取音视频时间线偏移
 - 语法:`video.videoTracks`(**注意：**只有`video`对象才可能有这个属性)
@@ -591,10 +591,10 @@
     	- selected - 获得或设置视频轨道是否是活动的 (true|false)
 
 - 调用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	alert(myVid.videoTracks.length+"条视频轨");
-
+```
 #### `volume` (所有浏览器支持)
 设置/获取音视频音量
 - 语法:
@@ -602,10 +602,10 @@
 	- 设置：`audio|video.volume=volumevalue`
 - 值介绍：数值值，范围为`0.0-1.0`，`1.0`（默认）是最大音量，`0.0`是静音。
 - 调用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.volume=0.2;//设置为20%音量
-
+```
 ### 事件
 当前在HTML5音视频DOM对象定义中主要有`abort`、`canplay`、`canplaythrough`、`durationchange`、`emptied`、`ended`、`error`、`loadeddata`、`loadedmetadata`、`loadstart`、`pause`、`play`、`playing`、`progress`、`ratechange`、`seeked`、`seeking`、`stalled`、`suspend`、`timeupdate`、`volumechange`、`waiting`等事件可以侦测使用。下面是各事件介绍。
 
@@ -613,21 +613,21 @@
 当视音频在加载中被用户放弃时触发。`error`属性有`MEDIA_ERR_ABORTED`错误码，`networkState`属性为`NETWORK_EMPTY`或者`NETWORK_IDLE`状态。
 
 应用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.onabort=alert("视频加载被终止！");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onabort="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js
 	audio|video.addEventListener("abort", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 
 #### `canplay` (所有浏览器支持)
 当浏览器能够开始播放指定的音频/视频时，发生 `canplay` 事件。当音频/视频处于加载播放过程中时（能正常播放情况下），会依次发生以下事件：
@@ -641,40 +641,40 @@
 1. `canplaythrough`
 
 应用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.oncanplay=alert("可以开始播放视频啦");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video oncanplay="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js
 	audio|video.addEventListener("canplay", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `canplaythrough` (所有浏览器支持)
 当浏览器预计能够在不停下来进行缓冲的情况下持续播放指定的音频/视频时，会发生 `canplaythrough` 事件。可以用来提示状态。`redyState`属性变得大于等于`HAVE_FUTURE_DATA`。
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.oncanplaythrough=alert("视频可一直播放");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video oncanplaythrough="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js
 	audio|video.addEventListener("canplaythrough", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 
 #### `durationchange` (所有浏览器支持)
 当指定音频/视频的时长数据发生变化时，发生 `durationchange` 事件。
@@ -682,383 +682,383 @@
 当音频/视频加载后，时长将由 "NaN" 变为音频/视频的实际时长。
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.ondurationchange=alert("视频持续时间已经变化");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video ondurationchange="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("durationchange", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `emptied` (所有浏览器支持)
 当指定音频/视频目前的播放列表为空时，发生 `emptied` 事件。`networkState`属性值变为`NETWORK_EMPTY`。
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onemptied=alert("播放列表为空");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onemptied="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js
 	audio|video.addEventListener("emptied", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `ended` (所有浏览器支持)
 当指定音频/视频目前的播放列表已结束时，发生 `ended` 事件。此时`currentTime`值等于媒体资源最大值，且`ended`属性值为`true`。
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onended=alert("播放列表已结束");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onended="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("ended", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `error` (所有浏览器支持)
 当指定音频/视频目前的播放列表已结束时，发生 `error` 事件。`error`属性对象有`MEDIA_ERR_NETWORK`以上的错误码，`networkState`属性为`NETWORK_EMPTY`或者`NETWORK_IDLE`状态。
 
 应用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.onerror=alert("发生错误");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onerror="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("error", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `loadeddata` (所有浏览器支持)
 当前帧的数据已加载，但没有足够的数据来播放指定音频/视频的下一帧时，会发生 `loadeddata` 事件。`readyState`属性变为大于等于`HAVE_CURRENT_DATA`
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onloadeddata=alert("当前帧加载完毕");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onloadeddata="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("loadeddata", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `loadedmetadata` (所有浏览器支持)
 当指定的音频/视频的元数据已加载时，会发生 `loadedmetadata` 事件。`readyState`属性变为大于等于` HAVE_METADATA`
 
 音频/视频的元数据包括：时长、尺寸（仅视频）以及文本轨道。
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onloadedmetadata=alert("元数据信息加载完毕");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onloadedmetadata="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("loadedmetadata", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `loadstart` (所有浏览器支持)
 当浏览器开始寻找指定的音频/视频时，会发生 `loadstart` 事件。即当加载过程开始时。`networkState`属性等于`NETWORK_LOADING`。
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onloadstart=alert("开始加载播放");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onloadstart="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("loadstart", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `pause` (所有浏览器支持)
 当音频/视频已暂停时时，会发生 `pause` 事件。此时`paused`属性会变成`true`
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onpause=alert("播放暂停");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onpause="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("pause", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `play` (所有浏览器支持)
 当音频/视频已开始或不再暂停时，会发生 `play` 事件。此时`paused`属性会变成`false`
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onplay=alert("播放中");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onplay="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("play", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `playing` (所有浏览器支持)
 当音频/视频在已因缓冲而暂停或停止后已就绪时，会发生 `playing` 事件。此时`readyState`值要变得等于或者大于`HAVE_FUTURE_DATA`，且`paused`属性值为`false`；或者`readyState`值要等于或者大于`HAVE_FUTURE_DATA`，而`paused`属性值变为`false`。
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onplaying=alert("播放恢复");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onplaying="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("playing", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `progress` (所有浏览器支持)
 当浏览器正在下载指定的音频/视频时，会发生 `progress` 事件。`networkState`属性等于`NETWORK_LOADING`。
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onprogress=alert("数据加载中");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onprogress="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("progress", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `ratechange` (所有浏览器支持)
 当音频/视频的播放速度已更改时，会发生 `ratechange` 事件。
 
 应用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.onratechange=alert("播放速度调整了");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onratechange="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("ratechange", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 
 #### *`resize`* (浏览器Chrome支持)
 视频的播放区域大小更改时（`videoWidth`或`videoHeight`属性发生变化时），会发生 `resize` 事件。但`readyState`属性值不会是`HAVE_NOTHING`值
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onresize=alert("播放大小变化了");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onresize="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js
 	audio|video.addEventListener("resize", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 
 #### `seeked` (所有浏览器支持)
 当用户已移动/跳跃到音频/视频中的新位置时，会发生 `seeked` 事件。
 
 应用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.onseeked=alert("已经重新定位");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onseeked="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js
 	audio|video.addEventListener("seeked", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `seeking` (所有浏览器支持)
 当用户开始移动/跳跃到音频/视频中的新位置时，会发生 `seeking` 事件。
 
 应用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.onseeking=alert("重新定位中");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onseeking="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("seeking", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `stalled` (所有浏览器支持)
 当浏览器尝试获取媒体数据，但数据不可用时，会发生 `stalled` 事件。`networkState`属性值为 `NETWORK_LOADING`。 
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.onstalled=alert("数据不可用");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html
 	<audio|video onstalled="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js
 	audio|video.addEventListener("stalled", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `suspend` (所有浏览器支持)
 当浏览器刻意不获取媒体数据时（权限、跨域等等问题），会发生 `suspend` 事件。`networkState`属性等于`NETWORK_IDLE`
 
 应用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.onsuspend=alert("不允许获取数据");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onsuspend="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js
 	audio|video.addEventListener("suspend", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `timeupdate` (所有浏览器支持)
 当目前的播放位置已更改时，会发生 `timeupdate` 事件，一般用来更新指示器，也可以用于同步。
 
 应用示例：
-> 
+```js 
 	myVid=document.getElementById("video1");
 	myVid.ontimeupdate=alert("播放头已移动");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html
 	<audio|video ontimeupdate="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("timeupdate", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `volumechange` (所有浏览器支持)
 当音量已更改时，会发生 `volumechange` 事件，一般用来更新指示器。
 
 应用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.onvolumechange=alert("音量已变化");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html 
 	<audio|video onvolumechange="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("volumechange", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
 #### `waiting` (所有浏览器支持)
 当视频由于需要缓冲下一帧而停止，会发生 `waiting` 事件。此时`readyState`属性要小于等于`HAVE_CURRENT_DATA`,`paused`属性为`false`。
 
 应用示例：
-> 
+```js
 	myVid=document.getElementById("video1");
 	myVid.onwaiting=alert("等待接下来的数据");
-
+```
 此外还可以在标签中定义使用，例如：
-> 
+```html
 	<audio|video onwaiting="SomeJavaScriptCode">
-
+```
 采用`addEventListener()`添加事件处理方式：
-> 
+```js 
 	audio|video.addEventListener("waiting", 	function(){
   			//SomeJavaScriptCode
   		}
 	);
-
+```
