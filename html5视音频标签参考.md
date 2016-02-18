@@ -118,7 +118,7 @@
 #### `canPlayType() ` （所有主流浏览器均支持）
 用来检测浏览器对音视频格式支持情况
 
- * 语法: `audio|video.canPlayType(type)
+ * 语法: `audio|video.canPlayType(type)`
  * 参数介绍：
  
 	- `type`:一个表示规定要检测的音频/视频类型和具体编码的字符串格式为`MIMEString；codecsSting`
@@ -154,10 +154,9 @@
 	isSupp=myVid.canPlayType(vidType+';codecs="'+codType+'"');
 ```
 #### *`load()`* （除Safari外所有主流浏览器均支持）
-更改资源后重新进行加载，没有返回值。**注意：**仅仅是加载，并不会自动播放。
-
-	* 语法: `audio|video.load()
-	* 调用示例： 
+更改资源后重新进行加载，没有返回值。**注意：** 仅仅是加载，并不会自动播放。
+* 语法: `audio|video.load()`
+* 调用示例： 
 ```js 
 	document.getElementById("mp4_src").src="movie.mp4";
 	document.getElementById("ogg_src").src="movie.ogg";
@@ -177,12 +176,12 @@
   		myVideo.pause();
 	}
 ```
-**注意**并没有所谓的*`stop()`*方法，即没有停止方法，其效果可由`load()`代替。
+**注意** 并没有所谓的*`stop()`*方法，即没有停止方法，其效果可由`load()`代替。
 
 ### 属性 
-当前在HTML5音视频DOM对象定义中主要有`audioTracks`、`autoplay`、`buffered`、`controller`、`controls`、`crossOrigin`、`currentSrc`、`currentTime`、`defaultMuted`、`defaultPlaybackRate`、`duration`、`ended`、`error`、`loop`、`mediaGroup`、`muted`、`networkState`、`paused`、`playbackRate`、`played`、`preload`、`readyState`、`seekable`、`seeking`、`src`、`startDate`、`textTracks`、`videoTracks`、`volume`，以及视频对象独有的`videoWidth`和`videoHeight`（**注意：**一般对象的`width`和`height`被支持，但不能获取正确的值）下面是各属性介绍。
+当前在HTML5音视频DOM对象定义中主要有`audioTracks`、`autoplay`、`buffered`、`controller`、`controls`、`crossOrigin`、`currentSrc`、`currentTime`、`defaultMuted`、`defaultPlaybackRate`、`duration`、`ended`、`error`、`loop`、`mediaGroup`、`muted`、`networkState`、`paused`、`playbackRate`、`played`、`preload`、`readyState`、`seekable`、`seeking`、`src`、`startDate`、`textTracks`、`videoTracks`、`volume`，以及视频对象独有的`videoWidth`和`videoHeight`（**注意：** 一般对象的`width`和`height`被支持，但不能获取正确的值）下面是各属性介绍。
 
-### `videoWidth`和`videoHeight`（所有浏览器都支持）
+#### `videoWidth`和`videoHeight`（所有浏览器都支持）
 获取当前HTML5视频的宽和高。
 
 - 语法：`video.videoWidth`或`video.videoHeight`
@@ -294,7 +293,7 @@
 - 值介绍：`crossOrigin`属性值为`CORS-String`字符串，主要有4种情况
 	- 空值即`""`:等效于`anonymous`模式，且
 	- `anonymous`:`anonymous`状态
-	- 没有定义（默认值）:**`No CORS`**状态，**注意**与`anonymous`状态的区别，表示忽略掉默认状态的一种特殊状态
+	- 没有定义（默认值）:**`No CORS`**状态，**注意** 与`anonymous`状态的区别，表示忽略掉默认状态的一种特殊状态
 	- `use-credentials`：对应`Use Credentials`状态
 - `CORS`（跨站共享）状态对资源获取影响：
 	- 请求的URL与定义媒体资源页面同源、或者URL为`data:URL`、或者URL为`about:blank`则执行如下步骤：
@@ -367,7 +366,7 @@
 ```
 #### `duration` (所有浏览器支持)
 获取音视频长度值（以秒为单位）。**注意**因为媒体资源长度可能是根据数据包计算，也可能是写入`metadata`中，所以在加载中，对于写入`metadata`的，加载后就不会变化，对根据获取数据包计算的，可能这个值会不断发生改变（特别是对于较大的音频资源）
-- 语法:`audio|video.duration `
+- 语法:`audio|video.duration`
 - 值介绍：只读数值，如果获取为`NaN`表示还未设置音视频（没有初始化加载）。
 - 调用示例：
 ```js 
@@ -484,7 +483,7 @@
     - start(index) - 获得某个已播范围的开始位置（秒计，index<length）
     - end(index) - 获得某个已播范围的结束位置（秒计,index<length）
     
- **注释：**首段已播放范围的下标是0。
+ **注释：** 首段已播放范围的下标是0。
 - 调用示例：
 ```js
 	myVid=document.getElementById("video1");
@@ -527,7 +526,7 @@
     - start(index) - 获得可寻址范围的开始位置
     - end(index) - 获得可寻址范围的结束位置
 
-	**注释：**第一个可寻址范围的下标是 index 0。
+	**注释：** 第一个可寻址范围的下标是 index 0。
 - 调用示例：
 ```js 
 	myVid=document.getElementById("video1");
@@ -574,7 +573,7 @@
 ```
 #### *`videoTracks`* (所有浏览器都不支持)
 只读获取音视频时间线偏移
-- 语法:`video.videoTracks`(**注意：**只有`video`对象才可能有这个属性)
+- 语法:`video.videoTracks`(**注意：** 只有`video`对象才可能有这个属性)
 - 值介绍：返回`VideoTrackList`对象值，表示当前表示视频的可用视频轨道。`VideoTrackList`对象有如下属性：
 	- length - 获得视频中可用视频轨道的数量
     - getTrackById(id) - 通过 id 获得 VideoTrack 对象
