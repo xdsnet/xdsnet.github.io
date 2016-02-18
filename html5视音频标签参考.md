@@ -176,7 +176,7 @@
   		myVideo.pause();
 	}
 ```
-**注意** 并没有所谓的*`stop()`*方法，即没有停止方法，其效果可由`load()`代替。
+**注意** 并没有所谓的*stop()* 方法，即没有停止方法，其效果可由`load()`代替。
 
 ### 属性 
 当前在HTML5音视频DOM对象定义中主要有`audioTracks`、`autoplay`、`buffered`、`controller`、`controls`、`crossOrigin`、`currentSrc`、`currentTime`、`defaultMuted`、`defaultPlaybackRate`、`duration`、`ended`、`error`、`loop`、`mediaGroup`、`muted`、`networkState`、`paused`、`playbackRate`、`played`、`preload`、`readyState`、`seekable`、`seeking`、`src`、`startDate`、`textTracks`、`videoTracks`、`volume`，以及视频对象独有的`videoWidth`和`videoHeight`（**注意：** 一般对象的`width`和`height`被支持，但不能获取正确的值）下面是各属性介绍。
