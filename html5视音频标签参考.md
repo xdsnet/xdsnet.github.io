@@ -240,7 +240,7 @@
 	lenght=myVid.buffered.lenght;
 	out="视频有"+lenght+"段缓冲区,各段起始时间(秒)为:\n";
 	for(var i=0;i<lenght;i++)
-	out=out+"第"+(i+1)+"段Start: "+myVid.buffered.start(i)+" End: "+myVid.buffered.end(0)+"\n";
+	    out=out+"第"+(i+1)+"段Start: "+myVid.buffered.start(i)+" End: "+myVid.buffered.end(0)+"\n";
 	alert(out);
 ```
 #### *`controller`* (所有主流浏览器都不支持)
