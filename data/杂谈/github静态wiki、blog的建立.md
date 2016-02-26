@@ -2,7 +2,7 @@
 [toc]
 ## github个人站的开通
 1. 开通[github.com](www.github.com)的账号，具体过程这里不再累述，请参见网上其他文章后文假定有`auser`用户是github上有效用户
-2. 在`auser`用户下建立一个名为`auser.github.io`的仓库，即（https://github.com/auser/auser.github.io）。则该仓库即同步开通一个域名（网址）`auser.github.io`的静态页面网站，所有在仓库`auser.github.io`的`master`分支下的文件（包含子目录路径文件）如`path/afile.html`均可以直接以`http://auser.github.io/path/afile.html`来访问到。
+2. 在`auser`用户下建立一个名为`auser.github.io`的仓库，即`（https://github.com/auser/auser.github.io）`。则该仓库即同步开通一个域名（网址）`auser.github.io`的静态页面网站，所有在仓库`auser.github.io`的`master`分支下的文件（包含子目录路径文件）如`path/afile.html`均可以直接以`http://auser.github.io/path/afile.html`来访问到。
 3. 至此，基本的github个人站其实已经建立完成。
 
 对于个人其他项目仓库（例如项目仓库`https://github.com/auser/brep`），其实在`auser.github.io`建立起来后，则自动会有一个名为`auser.github.io/brep/`的静态页面地址指向该项目仓库，以完成项目说明，不过因为`brep`项目仓库这时`master`分支会放置该项目相关的文件，而不会用来放置静态`html`页面，所以github会让`auser.github.io/brep/`对应`https://github.com/auser/brep/tree/gh-pages/`。
