@@ -5,7 +5,7 @@
 [本站的github站点](https://github.com/xdsnet/xdsnet.github.io)上可以直接看到所有的`markdown`文件。
 
 ## 最新更新
- * [html5视音频标签参考](?name=html:html5视音频标签参考)
+ * [html5视音频标签参考](/index.html?name=html:html5视音频标签参考)
  * [OpenWrt使用花生壳脚本](linux:openwrtfororay)
 
 
