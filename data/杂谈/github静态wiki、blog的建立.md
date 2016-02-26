@@ -8,7 +8,7 @@
 对于个人其他项目仓库（例如项目仓库`https://github.com/auser/brep`），其实在`auser.github.io`建立起来后，则自动会有一个名为`auser.github.io/brep/`的静态页面地址指向该项目仓库，以完成项目说明，不过因为`brep`项目仓库这时`master`分支会放置该项目相关的文件，而不会用来放置静态`html`页面，所以github会让`auser.github.io/brep/`对应`https://github.com/auser/brep/tree/gh-pages/`。
 
 ## 利用wiki-in-box搭建纯静态支持`markdown`页面站点
-因为github提供的站点服务是纯静态web页面服务，所以比较不方便，特别是需要专门写`HTML`代码是很繁琐的事情。我就选择了利用[`wiki-in-box`](http://dmscode.github.io/Wiki-in-box/)搭建纯静态支持`markdown`的wiki、blog站点。
+因为github提供的站点服务是纯静态web页面服务，所以比较不方便，特别是需要专门写`HTML`代码是很繁琐的事情。我就选择了利用[wiki-in-box](http://dmscode.github.io/Wiki-in-box/)搭建纯静态支持`markdown`的wiki、blog站点。
 
 搭建过程十分简单，对于`auser.github.io`仓库，在`master`分支根目录下放置`wiki-in-box`的所有文件，即可，所有`markdown`文件都放置在`data`子目录下，相关图片放置在`imgs`子目录下。具体`wiki-in-box`的使用参见其项目主页。
 
