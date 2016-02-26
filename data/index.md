@@ -7,6 +7,6 @@
 ## 最新更新
  * [html5视音频标签参考](./index.html?name=html:html5视音频标签参考)
  * [OpenWrt使用花生壳脚本](linux:openwrtfororay)
- * [github静态wiki、blog小站的建立](./index.html?name=杂谈:github静态wiki-blog的建立)
+ * [github静态wiki、blog小站的建立](./index.html?name=杂谈:github静态wiki、blog的建立)
 
 
