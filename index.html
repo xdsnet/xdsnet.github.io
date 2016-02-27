@@ -77,7 +77,7 @@
 					return '<div class="img-box"><img src="'+href+'" alt="'+text+'" /></div>';
 				};
 				renderer.link = function(href, title, text){	// 设置 Markdown 转换时链接的代码
-				  var reg = new RegExp("^[\\w\\-\\:\u4E00-\u9FA5\uFE30-\uFFA0\]+$");	// 验证命名域
+				  var reg = new RegExp("^[\.\\w\\-\\:\u2E80-\u2FDF\u2FF0-\u2FFF\u3000-\u303F\u31C0-\u31EF\uFE00-\uFFEF\u4E00-\u9FA5]+$");	// 验证命名域
 					if(reg.test(href)){
 						return '<a href="index.html?name='+href+'" title="'+text+'">'+text+'</a>';
 					}else if(title == "def"){
