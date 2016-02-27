@@ -33,3 +33,9 @@ var reg = new RegExp("^[\.\\w\\-\\:\u2E80-\u2FDF\u2FF0-\u2FFF\u3000-\u303F\u31C0
 ```
 **注意**在这个规则式中我还包含了`.`，因为当前目录和文件命名中都可以额外的包含它，而不仅仅是扩展名的分隔啦。这个问题的修复已经提交给了`wiki-in-box`，期待他的修复，这个规则式应该还能改写以支持所有非英语文件命名，因为我没有这样的需要，所以先就改成这样啦。
 
+------
+### 参考
+* [http://www.cnblogs.com/sosoft/p/3456631.html](http://www.cnblogs.com/sosoft/p/3456631.html) 改写规则式定义
+* [http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp](http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp)了解`JavaScript`规则式
+* [https://help.github.com/categories/github-pages-basics/](https://help.github.com/categories/github-pages-basics/)了解github静态网站建立规则
+
