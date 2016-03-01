@@ -8,5 +8,6 @@
  * [html5视音频标签参考](html:html5视音频标签参考)
  * [OpenWrt使用花生壳脚本](linux:openwrtfororay)   
  * [github静态wiki、blog小站的建立](杂谈:github静态wiki、blog的建立)
+ * [ffmpeg 文档翻译专题](/other-doc-cn-ffmpeg/)
 
 
