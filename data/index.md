@@ -9,3 +9,4 @@
  * [OpenWrt使用花生壳脚本](linux:openwrtfororay)    - 2016.2.26 （自转来）
  * [github静态wiki、blog小站的建立](杂谈:github静态wiki、blog的建立)   - 2016.2.27   （自转来）
  * [ffmpeg 文档翻译专题](/other-doc-cn-ffmpeg/)  - 2016.3.1（自转来）
+ * [mp4格式文件转码后处理（qt-faststart工具介绍）](杂谈:mp4格式文件转码后处理) - 2016.3.6
