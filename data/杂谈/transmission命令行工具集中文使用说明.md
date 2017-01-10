@@ -1,4 +1,5 @@
 # transmission命令行工具集中文使用说明
+[toc]
 [transmission](http://www.transmissionbt.com/)作为一个优秀的BT下载工具，支持普通BT和PT广受用户喜爱。近日根据需要调整PT种子的属性，所以稍微研究了下transmission的命令行工具，并根据man文档简要翻译出了本份说明。
 
 本说明内容，基于2.8.4版本。
