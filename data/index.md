@@ -5,6 +5,8 @@
 [本站的github站点](https://github.com/xdsnet/xdsnet.github.io)上可以直接看到所有的`markdown`文件。
 
 ## 最新更新
+ * [transmission命令行工具集中文使用说明](杂谈:transmission命令行工具集中文使用说明) - 2017.1.10
+ * [ucloud静态Wiki、blog的建立](杂谈:ucloud静态Wiki、blog的建立) - 2016.11.27
  * [蒲公英智能组网路由器的测试与应用](linux:蒲公英智能组网路由器的测试与应用)  - 2016.5.19
  * [html5视音频标签参考](html:html5视音频标签参考)  - 2016.2.25（自转来）
  * [OpenWrt使用花生壳脚本](linux:openwrtfororay)    - 2016.2.26 （自转来）
