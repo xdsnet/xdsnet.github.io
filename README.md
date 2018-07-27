@@ -1,5 +1,5 @@
 # 杂食菜熊的blog
-本站放置[杂食菜熊的blog](http://xdsnet.github.io/)源文件
+本站放置[杂食菜熊的blog](https://xdsnet.github.io/)源文件
 
 ## 技术
 本站采用wiki-in-box搭建，所以所有文章均放置在`data`子目录下，并且分成多个多级目录（可能情况）
